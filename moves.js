@@ -1,23 +1,66 @@
+function playMove(message, animation, soundFile) {
+    let output = document.getElementById("output");
+    let anim = document.getElementById("anim");
+    let sound = document.getElementById("sound");
+
+    output.textContent = message;
+
+    // Play animation
+    anim.src = animation;
+    anim.style.display = "block";
+
+    // Play sound
+    sound.src = soundFile;
+    sound.play();
+}
+
 document.addEventListener("keydown", (event) => {
     const key = event.key.toLowerCase();
-    let output = document.getElementById("output");
 
     switch (key) {
         // Gojo
-        case "1": output.textContent = "Gojo used BLUE!"; break;
-        case "2": output.textContent = "Gojo used RED!"; break;
-        case "3": output.textContent = "Gojo used PURPLE!"; break;
-        case "4": output.textContent = "Gojo activated LIMITLESS!"; break;
-        case "5": output.textContent = "Gojo used HOLLOW PURPLE!!!"; break;
+        case "1":
+            playMove("Gojo used BLUE!", "img/blue.gif", "sounds/blue.mp3");
+            break;
 
-        // Sukuna
-        case "q": output.textContent = "Sukuna used CLEAVE!"; break;
-        case "w": output.textContent = "Sukuna used DISMANTLE!"; break;
-        case "e": output.textContent = "Sukuna used FIRE ARROW!"; break;
-        case "r": output.textContent = "Sukuna activated DOMAIN EXPANSION!"; break;
-        case "t": output.textContent = "Sukuna summoned MALEVOLENT SHRINE!"; break;
+        case "2":
+            playMove("Gojo used RED!", "img/red.gif", "sounds/red.mp3");
+            break;
 
-        default:
-            output.textContent = "Invalid key.";
+        case "3":
+            playMove("Gojo used PURPLE!", "img/purple.gif", "sounds/purple.mp3");
+            break;
+
+        case "4":
+            playMove("Gojo activated LIMITLESS!", "img/limitless.gif", "sounds/limitless.mp3");
+            break;
+
+        case "5":
+            playMove("Gojo used HOLLOW PURPLE!!!", "img/hollow_purple.gif", "sounds/hollow_purple.mp3");
+            break;
+
+        // Sukuna (still text only for now)
+        case "q":
+            playMove("Sukuna used CLEAVE!", "img/cleave.gif", "sounds/cleave.mp3");
+            break;
+
+        case "w":
+            playMove("Sukuna used DISMANTLE!", "img/dismantle.gif", "sounds/dismantle.mp3");
+            break;
+
+        case "e":
+            playMove("Sukuna used FIRE ARROW!", "img/fire_arrow.gif", "sounds/fire_arrow.mp3");
+            break;
+
+        case "r":
+            playMove("Sukuna DOMAIN EXPANSION!", "img/domain.gif", "sounds/domain.mp3");
+            break;
+
+        case "t":
+            playMove("Sukuna MALEVOLENT SHRINE!", "img/shrine.gif", "sounds/shrine.mp3");
+            break;
     }
 });
+
+    
+            
