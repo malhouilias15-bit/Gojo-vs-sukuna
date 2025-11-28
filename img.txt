@@ -1,0 +1,5 @@
+img/blue.gif
+img/red.gif
+img/purple.gif
+img/limitless.gif
+img/hollow_purple.gif
