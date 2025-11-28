@@ -1,3 +1,16 @@
+function playAnimation(file) {
+    const box = document.getElementById("animation");
+    box.innerHTML = `<img src="img/${file}">`;
+
+    setTimeout(() => {
+        box.innerHTML = "";
+    }, 2000);
+}
+
+function playSound(soundFile) {
+    const audio = new Audio(`sounds/${soundFile}`);
+    audio.play();
+}
 function playMove(message, animation, soundFile) {
     let output = document.getElementById("output");
     let anim = document.getElementById("anim");
@@ -16,6 +29,31 @@ function playMove(message, animation, soundFile) {
 
 document.addEventListener("keydown", (event) => {
     const key = event.key.toLowerCase();
+// Gojo moves
+if (key === "1") {
+    playAnimation("blue.gif");
+    playSound("blue.mp3");
+}
+
+if (key === "2") {
+    playAnimation("red.gif");
+    playSound("red.mp3");
+}
+
+if (key === "3") {
+    playAnimation("purple.gif");
+    playSound("purple.mp3");
+}
+
+if (key === "4") {
+    playAnimation("limitless.gif");
+    playSound("limitless.mp3");
+}
+
+if (key === "5") {
+    playAnimation("hollow_purple.gif");
+    playSound("hollow_purple.mp3");
+}
 
     switch (key) {
         // Gojo
